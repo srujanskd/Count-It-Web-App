@@ -1,0 +1,59 @@
+.bounding-box {
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid #f00;
+    pointer-events: all;
+    z-index: 1;
+  }
+  
+  .handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    z-index: 2;
+  }
+  
+  .top-left {
+    top: -5px;
+    left: -5px;
+    cursor: nwse-resize;
+  }
+  
+  .top-right {
+    top: -5px;
+    right: -5px;
+    cursor: nesw-resize;
+  }
+  
+  .bottom-left {
+    bottom: -5px;
+    left: -5px;
+    cursor: nesw-resize;
+  }
+  
+  .bottom-right {
+    bottom: -5px;
+    right: -5px;
+    cursor: nwse-resize;
+  }
+  
+  .delete {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #f00;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .delete:hover {
+    color: #fff;
+    background-color: #f00;
+  }
+  

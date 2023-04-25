@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ImageUpload from './ImageUpload';
+import BoundingBox from './BoundingBox';
+import BoundingBoxList from './BoundingBoxList';
+import SubmitButton from './SubmitButton';
 
 function App() {
+  const [imageFile, setImageFile] = useState(null);
+  const [boundingBoxes, setBoundingBoxes] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ImageUpload setImageFile={setImageFile} />
+      <BoundingBox imageFile={imageFile} boundingBoxes={boundingBoxes} setBoundingBoxes={setBoundingBoxes} />
+      <BoundingBoxList boundingBoxes={boundingBoxes} />
+      <SubmitButton imageFile={imageFile} boundingBoxes={boundingBoxes} />
     </div>
   );
 }
